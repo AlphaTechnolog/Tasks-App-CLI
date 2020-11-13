@@ -1,0 +1,30 @@
+#!/usr/bin/env python3
+
+from sqlite3 import connect as dbconnect
+from cli_app import App
+from commands.show import Show
+from commands.add import Add
+from commands.remove import Remove
+from commands.edit import Edit
+
+def database():
+    """Database initialization"""
+    conn = dbconnect('db/tasksapp.sqlite3')
+    cur = conn.cursor()
+    cur.execute('CREATE TABLE IF NOT EXISTS Tasks (description TEXT, fulldescription TEXT, completed INT)')
+    conn.commit()
+    conn.close()
+
+class TasksApp(App):
+    """Save your tasks and get it with terminal!!!"""
+
+    def register_commands(self):
+        self.add_command('show', Show)
+        self.add_command('add', Add)
+        self.add_command('remove', Remove)
+        self.add_command('edit', Edit)
+
+if __name__ == '__main__':
+    database()
+    app = TasksApp()
+    app.run()
