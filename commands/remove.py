@@ -113,7 +113,7 @@ class Remove(Command):
         :param value: the value to search
         :returns: Task found
         """
-        conn = sqlite3.connect('db/tasksapp.sqlite3')
+        conn = sqlite3.connect('/opt/tasks-app/db/tasksapp.sqlite3')
         cur = conn.cursor()
         sql = self.get_search_sql(filter, value)
         cur.execute(sql)
@@ -134,7 +134,7 @@ class Remove(Command):
         :param value: the value of filter
         :returns: Exists?
         """
-        conn = sqlite3.connect('db/tasksapp.sqlite3')
+        conn = sqlite3.connect('/opt/tasks-app/db/tasksapp.sqlite3')
         cur = conn.cursor()
         sql = self.get_search_sql(filter, value)
 
@@ -155,7 +155,7 @@ class Remove(Command):
         :param value: the value
         :returns: OK?
         """
-        conn = sqlite3.connect('db/tasksapp.sqlite3')
+        conn = sqlite3.connect('/opt/tasks-app/db/tasksapp.sqlite3')
         cur = conn.cursor()
         cur.execute(self.get_delete_sql(filter, value))
         conn.commit()
@@ -174,7 +174,7 @@ class Remove(Command):
             value = 0
 
         # Getting all task with completed status
-        conn = sqlite3.connect('db/tasksapp.sqlite3')
+        conn = sqlite3.connect('/opt/tasks-app/db/tasksapp.sqlite3')
         cur = conn.cursor()
         cur.execute('SELECT * FROM Tasks WHERE completed = {}'.format(value))
         tasks = list(cur)

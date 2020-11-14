@@ -16,7 +16,7 @@ class Add(Command):
         :param self: self instance
         :returns: void
         """
-        conn = sqlite3.connect('db/tasksapp.sqlite3')
+        conn = sqlite3.connect('/opt/tasks-app/db/tasksapp.sqlite3')
         cur = conn.cursor()
         cur.execute('SELECT description FROM Tasks WHERE description = "{}"'.format(self.app.args.description))
         tasks = list(cur)
@@ -33,7 +33,7 @@ class Add(Command):
         :param self: self instance
         :returns: void
         """
-        conn = sqlite3.connect('db/tasksapp.sqlite3')
+        conn = sqlite3.connect('/opt/tasks-app/db/tasksapp.sqlite3')
         cur = conn.cursor()
         cur.execute('INSERT INTO Tasks (description, fulldescription, completed) VALUES (?, ?, ?)', (self.app.args.description, self.app.args.fulldescription, 0,))
         conn.commit()

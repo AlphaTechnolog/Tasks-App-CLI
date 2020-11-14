@@ -45,7 +45,7 @@ class Edit(Command):
         :param self: self instance
         :returns: exists?
         """
-        conn = sqlite3.connect('db/tasksapp.sqlite3')
+        conn = sqlite3.connect('/opt/tasks-app/db/tasksapp.sqlite3')
         cur = conn.cursor()
         cur.execute('SELECT description FROM Tasks WHERE description = ?', (self.app.args.newdescription,))
         result = list(cur)
@@ -63,7 +63,7 @@ class Edit(Command):
         :param self: self instance
         :returns: The found task, if not found returns None
         """
-        conn = sqlite3.connect('db/tasksapp.sqlite3')
+        conn = sqlite3.connect('/opt/tasks-app/db/tasksapp.sqlite3')
         cur = conn.cursor()
         cur.execute('SELECT * FROM Tasks WHERE description LIKE "{}%"'.format(self.app.args.description))
         task = list(cur)
@@ -81,7 +81,7 @@ class Edit(Command):
         :returns: void
         """
         sql = 'UPDATE Tasks SET description = "{}", fulldescription = "{}", completed = {} WHERE description LIKE "{}%"'.format(self.app.args.newdescription, self.app.args.newfulldescription, self.app.args.newcompleted, self.app.args.description)
-        conn = sqlite3.connect('db/tasksapp.sqlite3')
+        conn = sqlite3.connect('/opt/tasks-app/db/tasksapp.sqlite3')
         cur = conn.cursor()
         cur.execute(sql)
         conn.commit()

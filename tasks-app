@@ -9,7 +9,7 @@ from commands.edit import Edit
 
 def database():
     """Database initialization"""
-    conn = dbconnect('db/tasksapp.sqlite3')
+    conn = dbconnect('/opt/tasks-app/db/tasksapp.sqlite3')
     cur = conn.cursor()
     cur.execute('CREATE TABLE IF NOT EXISTS Tasks (description TEXT, fulldescription TEXT, completed INT)')
     conn.commit()
