@@ -34,7 +34,6 @@ fatal([
 fi
 
 cd ../
-ls
 sudo cp -r "./tasks-app" "/opt/tasks-app"
 sudo chmod -R 777 "/opt/tasks-app/"
 sudo ln -s "/opt/tasks-app/tasks-app" "/usr/bin/tasks-app"
