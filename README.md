@@ -4,18 +4,18 @@ This is an app to manage your tasks with command line interface (CLI).
 
 ## Installation
 
-Important!!! Rename the folder to "tasks-app"
+Exists 2 methods to install tasks app
 
 ### Automatic (Recomended)
 
-Open your terminal (Ctrl+Alt+T) and execute these commands:
+Open your terminal (Ctrl+Alt+T) and execute the next commands:
 
 ```sh
 cd /path/to/tasks-app
-./install.sh # To uninstall ./uninstall.sh
+./install.sh
 ```
 
-These script install the tasks app in your machine.
+The before script install the tasks app in your machine.
 
 ### Manual
 
@@ -27,9 +27,32 @@ cd ../
 sudo cp -r ./tasks-app /opt/tasks-app
 sudo chmod -R 777 /opt/tasks-app
 sudo ln -s /opt/tasks-app/tasks-app /usr/bin/tasks-app
-# To uninstall
-sudo rm -rf /opt/tasks-app
+# ...
+```
+
+## Uninstall
+
+Exists 2 methods to uninstall tasks app
+
+### Automatic (Recomended)
+
+Open your terminal (Ctrl+Alt+T) and execute the next commands:
+
+```sh
+cd /path/to/tasks-app
+./uninstall.sh
+# ...
+```
+
+The before script remove the tasks app of your machine (and db was deleted).
+
+### Manual
+
+Open your terminal (Ctrl+Alt+T) and execute the next commands:
+
+```sh
 sudo rm /usr/bin/tasks-app
+sudo rm -rf /opt/tasks-app
 ```
 
 ## Usage

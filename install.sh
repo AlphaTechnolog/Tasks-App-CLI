@@ -1,38 +1,6 @@
 #!/usr/bin/env bash
 
-processed_pwd=$(/usr/bin/env python3 -c "
-pwd='$PWD'
-pwd = pwd.split('/')
-pwd = pwd[-1]
-print(pwd)
-")
-
-if [[ $processed_pwd != 'tasks-app' ]]; then
-  /usr/bin/env python3 -c "
-def fatal(msgs):
-  if len(msgs) > 1:
-    print('Fatal')
-  else:
-    print('Fatal {}'.format(msgs[0]))
-
-  if len(msgs) > 1:
-    for msg in msgs:
-      print('  > {}'.format(msg))
-
-  exit(1)
-
-fatal([
-  'Uncaught error',
-  'Please execute the bash install.sh in the folder',
-  'Use instead:',
-  '$ cd /path/to/tasks-app',
-  '$ cd ./install.sh',
-  'if the folder is not called \"tasks-app\", please rename it'
-])
-  "
-  exit 1
-fi
-
+cd `dirname $0`
 cd ../
 sudo cp -r "./tasks-app" "/opt/tasks-app"
 sudo chmod -R 777 "/opt/tasks-app/"
