@@ -13,6 +13,7 @@ Open your terminal (Ctrl+Alt+T) and execute the next commands:
 ```sh
 cd /path/to/tasks-app
 ./install.sh
+# ...
 ```
 
 The before script install the tasks app in your machine.
@@ -53,6 +54,7 @@ Open your terminal (Ctrl+Alt+T) and execute the next commands:
 ```sh
 sudo rm /usr/bin/tasks-app
 sudo rm -rf /opt/tasks-app
+# ...
 ```
 
 ## Usage
