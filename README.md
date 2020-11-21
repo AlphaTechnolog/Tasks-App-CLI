@@ -5,6 +5,12 @@ This is an app to manage your tasks with command line interface (CLI).
 ## Installation
 
 Exists 2 methods to install tasks app
+The scripts are not available to windows, to use it use instead:
+
+```sh
+cd /path/to/tasks-app
+./tasks-app # commands...
+```
 
 ### Automatic (Recomended)
 
