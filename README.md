@@ -7,11 +7,6 @@ This is an app to manage your tasks with command line interface (CLI).
 Exists 2 methods to install tasks app
 In windows execute with admnitrative permissions the executable file to all operations.
 
-```sh
-cd /path/to/tasks-app
-./tasks-app # commands...
-```
-
 ### Automatic (Recomended)
 
 Open your terminal (Ctrl+Alt+T) and execute the next commands:
