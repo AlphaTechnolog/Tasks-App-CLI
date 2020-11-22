@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['tasks-app'],
-             pathex=['C:\\tasks-app'],
+             pathex=['/home/guerrafs/python3/cli_apps/tasks-app'],
              binaries=[],
              datas=[],
              hiddenimports=[],
