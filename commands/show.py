@@ -1,4 +1,5 @@
 import sqlite3
+from config.env import DATABASE
 from lib.util import fatal
 from cli_app import Command
 
@@ -38,7 +39,7 @@ class Show(Command):
     @staticmethod
     def fetchall():
         """This method fetch all tasks and show in terminal"""
-        conn = sqlite3.connect('/opt/tasks-app/db/tasksapp.sqlite3')
+        conn = sqlite3.connect(DATABASE['file'])
         cur = conn.cursor()
         cur.execute('SELECT * FROM Tasks')
 
@@ -118,7 +119,7 @@ class Show(Command):
         else:
             sql = 'SELECT * FROM Tasks WHERE {} LIKE "{}"'.format(filterval, valueoffilter)
 
-        conn = sqlite3.connect('/opt/tasks-app/db/tasksapp.sqlite3')
+        conn = sqlite3.connect(DATABASE['file'])
         cur = conn.cursor()
         cur.execute(sql)
 

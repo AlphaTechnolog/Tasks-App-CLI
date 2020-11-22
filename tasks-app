@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+import os
+from config.env import DATABASE
 from sqlite3 import connect as dbconnect
 from cli_app import App
 from commands.show import Show
@@ -8,8 +10,20 @@ from commands.remove import Remove
 from commands.edit import Edit
 
 def database():
-    """Database initialization"""
-    conn = dbconnect('/opt/tasks-app/db/tasksapp.sqlite3')
+    """Database initialization."""
+    # Checking if database file exists
+    try:
+        open('{}'.format(DATABASE['file']))
+    except:
+        os.system('mkdir {}'.format(DATABASE['dirname']))
+        if os.name == 'nt': # windows
+            print(DATABASE)
+            os.system('type >> {}'.format(DATABASE['file']))
+        else: # linux or mac
+            os.system('touch {}'.format(DATABASE['file']))
+    
+    # Creating tables
+    conn = dbconnect(DATABASE['file'])
     cur = conn.cursor()
     cur.execute('CREATE TABLE IF NOT EXISTS Tasks (description TEXT, fulldescription TEXT, completed INT)')
     conn.commit()
