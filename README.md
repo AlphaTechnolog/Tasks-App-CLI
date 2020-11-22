@@ -5,7 +5,7 @@ This is an app to manage your tasks with command line interface (CLI).
 ## Installation
 
 Exists 2 methods to install tasks app
-The scripts are not available to windows, to use it use instead:
+In windows execute with admnitrative permissions the executable file to all operations.
 
 ```sh
 cd /path/to/tasks-app
@@ -68,47 +68,47 @@ sudo rm -rf /opt/tasks-app
 To show help use:
 
 ```sh
-tasks-app --help # or
-tasks-app -h
+sudo tasks-app --help # or
+sudo tasks-app -h
 ```
 
 To show tasks use:
 
 ```sh
-tasks-app show
+sudo tasks-app show
 # ...
 ```
 
 To filter use:
 
 ```sh
-tasks-app show --filter='description|fullname|completed' --value='{Value to search}' # or
-tasks-app show -f='description|fullname|completed' -v='{Value to search}'
+sudo tasks-app show --filter='description|fullname|completed' --value='{Value to search}' # or
+sudo tasks-app show -f='description|fullname|completed' -v='{Value to search}'
 # ...
 ```
 
 To add task
 
 ```sh
-tasks-app add --description='description' --fulldescription='fulldescription' # or
-tasks-app add -d='description' -f='fulldescription'
+sudo tasks-app add --description='description' --fulldescription='fulldescription' # or
+sudo tasks-app add -d='description' -f='fulldescription'
 # ...
 ```
 
 To remove task
 
 ```sh
-tasks-app remove --value='Search value' # this is to remove by description, or
-tasks-app remove -v='Search value' # to remove with filter use:
-tasks-app remove --removeby='description|fulldescription|completed' --value='Search value' # or
-tasks-app remove -rb='description|fulldescription|completed' -v='Search value'
+sudo tasks-app remove --value='Search value' # this is to remove by description, or
+sudo tasks-app remove -v='Search value' # to remove with filter use:
+sudo tasks-app remove --removeby='description|fulldescription|completed' --value='Search value' # or
+sudo tasks-app remove -rb='description|fulldescription|completed' -v='Search value'
 # ...
 ```
 
 To edit task
 
 ```sh
-tasks-app edit --description='Description of task to edit' --newdescription='New description' --newfulldescription='New fulldescription' --newcompleted='True|False' # or
-tasks-app edit -d='Description of task to edit' -nd='New description' -nfd='New fulldescription' -nc='True|False'
+sudo tasks-app edit --description='Description of task to edit' --newdescription='New description' --newfulldescription='New fulldescription' --newcompleted='True|False' # or
+sudo tasks-app edit -d='Description of task to edit' -nd='New description' -nfd='New fulldescription' -nc='True|False'
 # ...
 ```

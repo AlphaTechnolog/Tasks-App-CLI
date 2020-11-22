@@ -36,6 +36,7 @@ print_final_log() {
   echo "  > Tasks app was uninstalled successfully"
   echo "  > If you resigned use:"
   echo "  > $route/install.sh"
+  echo "  > Please delete the alias added in your BASHrc"
 }
 
 tasks_app="/opt/tasks-app/tasks-app"
